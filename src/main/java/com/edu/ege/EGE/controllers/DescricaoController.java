@@ -12,14 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.edu.ege.EGE.entities.Descricao;
 import com.edu.ege.EGE.services.DescricaoService;
 
-@CrossOrigin(maxAge=3600)
 @RestController
 @RequestMapping("api/desc")
 public class DescricaoController {
 	@Autowired
 	private DescricaoService service;
 	
-	@CrossOrigin(origins="http://localhost:3000", allowedHeaders = "Requestor-Type", exposedHeaders = "X-Get-Header")
 	@GetMapping("/{id}")
 	public ResponseEntity<Descricao> getById(@PathVariable long id) {
 		Descricao desc = service.findById(id);

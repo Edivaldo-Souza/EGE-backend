@@ -12,14 +12,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.edu.ege.EGE.entities.EventosAssets;
 import com.edu.ege.EGE.services.*;
 
-@CrossOrigin(maxAge=3600)
 @RestController
 @RequestMapping("api/assets")
 public class AssetsController{
 	@Autowired
 	private EventoAssetsService service;
 	
-	@CrossOrigin(origins="http://localhost:3000", allowedHeaders = "Requestor-Type", exposedHeaders = "X-Get-Header")
 	@GetMapping("/{id}")
 	private List<EventosAssets> getById(@PathVariable long id){
 		List<EventosAssets> lista = new ArrayList<EventosAssets>();

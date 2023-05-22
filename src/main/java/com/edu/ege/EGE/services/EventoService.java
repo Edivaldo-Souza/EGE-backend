@@ -14,11 +14,6 @@ public class EventoService {
 	EventoRepository repository;
 	
 	public Evento create(Evento obj) {
-		List<Evento> allEventos = getAll();
-		for(int i = 0; i<allEventos.size(); i++) {
-			allEventos.get(i).setLatest(false);
-			repository.save(allEventos.get(i));
-		}
 		
 		obj.setLatest(true);
 		repository.save(obj);
